@@ -1,0 +1,41 @@
+name: quiz
+description: "A new Flutter project."
+
+# Prevent accidental publishing to pub.dev.
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.6.2
+
+dependencies:
+  audioplayers: ^6.4.0
+  collection: ^1.19.0
+  flutter:
+    sdk: flutter
+  flutter_animate: 4.2.0
+  flutter_localizations:
+    sdk: flutter
+  flutter_svg: ^2.0.17
+  lottie: ^3.3.1
+
+dev_dependencies:
+  flutter_lints: ^5.0.0
+  flutter_test:
+    sdk: flutter
+  very_good_analysis: ^7.0.0
+
+flutter:
+  uses-material-design: true
+
+  # Enable generation of localized Strings from arb files.
+  generate: true
+
+  assets:
+    # Add assets from the images directory to the application.
+    - assets/
+    - assets/images/
+    - assets/svg/
+    - assets/audio/
+    - assets/animations/
