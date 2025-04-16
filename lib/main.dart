@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:quiz/src/app.dart';
-import 'package:quiz/src/settings/settings_controller.dart';
-import 'package:quiz/src/settings/settings_service.dart';
+import 'package:neoflex_quiz/src/app.dart';
+import 'package:neoflex_quiz/src/settings/settings_controller.dart';
+import 'package:neoflex_quiz/src/settings/settings_service.dart';
 
 void main() async {
   // Set up the SettingsController, which will glue user settings to multiple

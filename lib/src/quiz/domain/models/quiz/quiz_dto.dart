@@ -1,7 +1,8 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
-import 'package:quiz/src/quiz/_quiz.dart';
+import 'package:neoflex_quiz/src/quiz/_quiz.dart';
 
 class QuizDTO {
   QuizDTO({
@@ -10,22 +11,6 @@ class QuizDTO {
     required this.answer,
     this.answers = const [],
   });
-
-  factory QuizDTO.fromMap(Map<String, dynamic> map) {
-    return QuizDTO(
-      code: map['code'] as String,
-      title: map['title'] as String,
-      answer: map['answer'] as String,
-      answers: List<QuizDTOAnswer>.from(
-        (map['answers'] as List<int>).map<QuizDTOAnswer>(
-          (x) => QuizDTOAnswer.fromMap(x as Map<String, dynamic>),
-        ),
-      ),
-    );
-  }
-
-  factory QuizDTO.fromJson(String source) =>
-      QuizDTO.fromMap(json.decode(source) as Map<String, dynamic>);
 
   final String code;
   final String title;
@@ -55,7 +40,23 @@ class QuizDTO {
     };
   }
 
+  factory QuizDTO.fromMap(Map<String, dynamic> map) {
+    return QuizDTO(
+      code: map['code'] as String,
+      title: map['title'] as String,
+      answer: map['answer'] as String,
+      answers: List<QuizDTOAnswer>.from(
+        (map['answers'] as List<dynamic>).map<QuizDTOAnswer>(
+          (e) => QuizDTOAnswer.fromMap(e as Map<String, dynamic>),
+        ),
+      ),
+    );
+  }
+
   String toJson() => json.encode(toMap());
+
+  factory QuizDTO.fromJson(String source) =>
+      QuizDTO.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
   String toString() {

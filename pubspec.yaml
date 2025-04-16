@@ -1,13 +1,10 @@
-name: quiz
+name: neoflex_quiz
 description: "A new Flutter project."
-
-# Prevent accidental publishing to pub.dev.
 publish_to: "none"
-
-version: 1.0.0+1
+version: 0.1.0
 
 environment:
-  sdk: ^3.6.2
+  sdk: ^3.7.2
 
 dependencies:
   audioplayers: ^6.4.0

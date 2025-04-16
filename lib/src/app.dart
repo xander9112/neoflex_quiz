@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:quiz/src/quiz/_quiz.dart';
-import 'package:quiz/src/settings/settings_controller.dart';
-import 'package:quiz/src/settings/settings_view.dart';
+import 'package:neoflex_quiz/src/quiz/_quiz.dart';
+import 'package:neoflex_quiz/src/settings/settings_controller.dart';
+import 'package:neoflex_quiz/src/settings/settings_view.dart';
 
 class MyApp extends StatelessWidget {
-  const MyApp({
-    required this.settingsController,
-    super.key,
-  });
+  const MyApp({required this.settingsController, super.key});
 
   final SettingsController settingsController;
 
@@ -21,16 +17,12 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           restorationScopeId: 'app',
           localizationsDelegates: const [
-            AppLocalizations.delegate,
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: const [
-            Locale('en', ''),
-          ],
-          onGenerateTitle: (BuildContext context) =>
-              AppLocalizations.of(context)!.appTitle,
+          supportedLocales: const [Locale('en', '')],
+
           theme: ThemeData(),
           darkTheme: ThemeData.dark(),
           themeMode: settingsController.themeMode,

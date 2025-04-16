@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quiz/src/settings/settings_service.dart';
+import 'package:neoflex_quiz/src/settings/settings_service.dart';
 
 /// A class that many Widgets can interact with to read user settings, update
 /// user settings, or listen to user settings changes.
